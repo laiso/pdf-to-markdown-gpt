@@ -1,0 +1,29 @@
+{
+  "name": "pdf-to-markdown-gpt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.7",
+    "@wojtekmaj/react-hooks": "^1.18.1",
+    "next": "14.0.3",
+    "pdfjs-dist": "^3.11.174",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-pdf": "^7.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5"
+  }
+}
