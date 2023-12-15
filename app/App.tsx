@@ -30,22 +30,14 @@ type PDFFile = string | File | null;
 
 export default function App() {
   const [textContents, setTextContents] = useState<PDFTextContent[]>([]);
-  const [previewText, setPreviewText] = useState<string>("LOADING...");
+  const [previewText, setPreviewText] = useState<string>("");
   const [loading, setLoading] = useState(false);
 
-  const [file, setFile] = useState<PDFFile>("/sample.pdf");
+  const [file, setFile] = useState<PDFFile>();
   const [pageNum, setPageNum] = useState<number>(0);
   const [numPages, setNumPages] = useState<number>(0);
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number>();
-
-  useEffect(() => {
-    (async () => {
-      const blob = await fetch("/sample.pdf").then((r) => r.blob());
-      const f = new File([blob], "sample.pdf", { type: "application/pdf" });
-      await onFileChange(f);
-    })();
-  }, []);
 
   const onResize = useCallback<ResizeObserverCallback>((entries) => {
     const [entry] = entries;
